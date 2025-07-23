@@ -1,11 +1,14 @@
-import { type PostProps } from '@/interfaces'
+import React from "react";
+import { type PostProps } from "@/interfaces";
 
-export default function PostCard({ title, content, userId }: PostProps) {
+const PostCard: React.FC<PostProps> = ({ title, body, userId }) => {
   return (
-    <div className="bg-white rounded-lg shadow p-6 w-full max-w-2xl mx-auto my-4">
-      <h2 className="text-xl font-bold text-gray-800 mb-2">{title}</h2>
-      <p className="text-gray-600 mb-2">{content}</p>
-      <p className="text-sm text-gray-500">Posted by User {userId}</p>
+    <div className="border p-4 rounded-md shadow mb-4">
+      <h2 className="text-xl font-bold">{title}</h2>
+      <p className="text-sm text-gray-600">User ID: {userId}</p>
+      <p className="mt-2">{body}</p>
     </div>
-  )
-}
+  );
+};
+
+export default PostCard;
